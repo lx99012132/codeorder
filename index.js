@@ -7,8 +7,8 @@ app.listen(port,()=>{
     console.log('Server Listening: ',port )
 });
 
-app.get ('/user',(req,res)=>{
-    pool.query('SELECT * FROM xz_user',(err,result)=>{
+app.get ('/category',(req,res)=>{
+    pool.query('SELECT id,name FROM co_menu_class',(err,result)=>{
         if(err) throw err;
         res.set('Access-Control-Allow-Origin','*');
         res.json(result);
